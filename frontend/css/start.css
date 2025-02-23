@@ -1,103 +1,240 @@
 body {
    font-family: "Oswald", serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
- }
- header {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
- }
- .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
- }
- header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
- }
- header nav ul li {
-    display: inline;
- }
- header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
- }
- header nav ul li a:hover {
-    text-decoration: underline;
- }
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+header {
+   background: linear-gradient(to right,#34495e, #0056b3); 
+   padding: 10px 20px;
+}
+
+.header-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.logo {
+   height: 95px; 
+}
+
+header nav ul {
+   list-style: none;
+   display: flex;
+   gap: 15px;
+}
+
+header nav ul li {
+   display: inline;
+}
+
+header nav ul li a {
+   color: #fff;
+   text-decoration: none;
+   font-weight: bold;
+}
+
+header nav ul li a:hover {
+   text-decoration: underline;
+}
+
+main {
+   padding: 20px;
+   text-align: center;
+   background-color: #f9f9f9;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+h2 {
+   font-size: 2rem;
+   margin-bottom: 10px;
+}
+
+p {
+   font-family: "Inter", serif;
+   font-size: 1.2rem;
+   margin-bottom: 20px;
+}
+
+.funcionalidades-wrapper {
+   display: flex;
+   justify-content: center; 
+   width: 100%;
+}
+
+.funcionalidades-container {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+   gap: 20px;
+   width: fit-content;
+   background: #fff; /* Fundo branco */
+   border: 2px solid #ddd; /* Borda */
+   border-radius: 8px;
+   padding: 20px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   
+}
+
+.funcionalidade {
+   background: #fff;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   padding: 15px;
+   width: 250px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s ease;
+}
+
+.funcionalidade:hover {
+   transform: scale(1.05);
+}
+
+.funcionalidade h3 {
+   font-size: 1.5rem;
+   margin-bottom: 10px;
+}
+
+.funcionalidade ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+.funcionalidade ul li {
+   margin: 10px 0;
+}
+
+.funcionalidade ul li a {
+   font-family: "Inter", serif;
+   text-decoration: none;
+   color: #007bff;
+   font-weight: bold;
+   transition: color 0.3s ease;
+}
+
+.funcionalidade ul li a:hover {
+   color: #0056b3;
+}
+
+section.sobre {
+   background-color: #fff;
+   border: 2px solid #34495e;
+   border-radius: 15px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   padding: 20px;
+   max-width: 600px;
+   margin: 40px auto;
+   text-align: center;
+   color: #333;
+   font-family: "Oswald", serif;
+}
+
+section.sobre h3 {
+   font-size: 1.8rem;
+   margin-bottom: 10px;
+   color: #222;
+}
+
+section.sobre p {
+   font-size: 1rem;
+   line-height: 1.6;
+   margin-bottom: 20px;
+   color: #666;
+}
+
+section.sobre button {
+   background-color: #5a738e;
+   color: #fff;
+   border: 2px solid #5a738e;
+   border-radius: 30px;
+   padding: 10px 20px;
+   font-size: 1rem;
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+section.sobre button:hover {
+   background-color: #fff;
+   color: #5a738e;
+}
+
+section.clube {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 40px 20px;
+   background-color: #f9f9f9;
+}
+
+.clube-container {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+   max-width: 900px;
+   margin: 0 auto;
+   background-color: #fff;
+   border-radius: 15px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+   padding: 20px;
+}
+
+.clube-image img {
+   width: 100%;
+   max-width: 300px;
+   height: auto;
+   border-radius: 15px;
+}
+
+.clube-content {
+   flex: 1;
+   text-align: left;
+   padding: 0 20px;
+   font-family: "Oswald", serif;
+   color: #333;
+}
+
+.clube-content h3 {
+   font-size: 1.8rem;
+   margin-bottom: 10px;
+   color: #222;
+}
+
+.clube-content p {
+   font-size: 1rem;
+   line-height: 1.6;
+   margin-bottom: 20px;
+   color: #666;
+}
+
+.clube-content button {
+   background-color: transparent;
+   color: #0056b3;
+   border: 2px solid #0056b3;
+   border-radius: 30px;
+   padding: 10px 20px;
+   font-size: 1rem;
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+.clube-content button:hover {
+   background-color: #34495e;
+   color: #fff;
+}
 
 
- main {
-    padding: 20px;
-    text-align: center;
-    background-color: #f9f9f9;
- }
- h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
- }
- p {
-    font-family: "Inter", serif;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
- }
- .funcionalidades-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
- }
- .funcionalidade {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    width: 250px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
- }
- .funcionalidade:hover {
-    transform: scale(1.05);
- }
- .funcionalidade h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
- }
- .funcionalidade ul {
-    list-style-type: none;
-    padding: 0;
- }
- .funcionalidade ul li {
-    margin: 10px 0;
- }
- .funcionalidade ul li a {
-    font-family: "Inter", serif;
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    transition: color 0.3s ease;
- }
- .funcionalidade ul li a:hover {
-    color: #0056b3;
- }
+footer {
+   background: #333;
+   color: #fff;
+   text-align: center;
+   padding: 10px 0;
+   bottom: 0;
+   width: 100%;
+   position: relative;
+   left: 0;
+}
 
-
- footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    bottom: 0;
-    width: 100%;
-    bottom: 0;
-    left: 0;
- }
-
- 
- 
