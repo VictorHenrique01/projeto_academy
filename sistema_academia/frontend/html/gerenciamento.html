@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso do Instrutor</title>
+    <link rel="stylesheet" href="/frontend/css/gerenciamento.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <header>
+        <h1>Sistema de Gerenciamento - Acesso do Instrutor</h1>
+    </header>
+    
+    <main>
+        <section id="gerenciamento" class="formulario">
+            <h2>Gerenciamento para Instrutor com as suas turmas e treinos</h2>
+            
+            <div class="menu-gerenciamento">
+                <button onclick="mostrarSecao('instrutor')">Instrutores</button>
+                <button onclick="mostrarSecao('turma')">Turmas</button>
+                <button onclick="mostrarSecao('treino')">Treinos</button>
+            </div>
+            
+            <!-- Cadastro de Instrutores -->
+            <div id="instrutor" class="secao-gerenciamento">
+                <h3>Cadastro de Instrutores</h3>
+                <form id="formCadastroInstrutor">
+                    <label for="nomeInstrutor">Nome:</label>
+                    <input type="text" id="nomeInstrutor" name="nomeInstrutor" required>
+                    
+                    <label for="especialidade">Especialidade:</label>
+                    <input type="text" id="especialidade" name="especialidade" required>
+                    
+                    <label for="periodo">Período:</label>
+                    <select id="periodo" name="periodo">
+                        <option value="manhã">Manhã</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noite">Noite</option>
+                    </select>
+                    
+                    <button type="submit">Cadastrar Instrutor</button>
+                </form>
+            </div>
+
+        <!-- Cadastro de Turmas -->
+        <div id="turma" class="secao-gerenciamento">
+            <h3>Criar Turma</h3>
+            <form id="formCadastroTurma">
+                <label for="nomeTurma">Nome da Turma conforme a sua especialidade:</label>
+                <select id="nomeTurma" name="nomeTurma">
+                    <option value="">Selecione uma opção</option>
+                    <option value="Boxe">Boxe</option> 
+                    <option value="Natação">Natação</option>
+                    <option value="Pilates">Pilates</option>
+                </select>
+
+                <label for="horario">Horário da Aula:</label>
+                <input type="time" id="horario" name="horario" required>
+
+                <!-- Botão oculto -->
+                <div id="botaoConsultaContainer">
+                    <button id="botaoConsulta" type="button" style="display: none; margin-top: 10px;">
+                        Consultar Disponibilidade dos Instrutores(as)
+                    </button>
+                </div>
+
+                <label for="instrutorTurma">Instrutor Responsável:</label>
+                <select id="instrutorTurma" name="instrutorTurma">
+                    <option value="">Selecione uma turma primeiro</option>
+                </select>
+
+                <button type="submit">Cadastrar Turma</button>
+            </form>
+        </div>
+
+
+            
+            <!-- Cadastro de Treinos -->
+            <div id="treino" class="secao-gerenciamento">
+                <h3>Registro de Treino ao Aluno</h3>
+                <form id="formCadastroTreino">
+                    <label for="tipoTreino">Tipo de Treino:</label>
+                    <select id="tipoTreino" name="tipoTreino">
+                        <option value="Membros Inferiores">Membros Inferiores</option>
+                        <option value="Membros Superiores">Membros Superiores</option>
+                        <option value="Costas e Bíceps">Costas e Bíceps</option>
+                        <option value="Peito e Tríceps">Peito e Tríceps</option>
+                        <option value="Quadríceps">Quadríceps</option>
+                        <option value="Pernas Completo">Pernas Completo</option>
+                        <option value="Ombros e Abdômen">Ombros e Abdômen</option>
+                        <option value="Corpo Inteiro">Corpo Inteiro</option>
+                        <option value="Cardio">Cardio</option>
+                        <option value="Flexibilidade">Flexibilidade</option>
+                    </select>
+            
+                    <!-- Equipamentos sugeridos -->
+                    <div id="equipamentosSugeridos" class="equipamentos-container">
+                        <label class="equipamentos-label">Equipamentos Sugeridos ao Treino escolhido:</label>
+                        <ul id="listaEquipamentos"></ul>
+                    </div>
+                    
+            
+                    <label for="idAluno">ID do Aluno:</label>
+                    <input type="number" id="idAluno" name="idAluno" required>
+            
+                    <label for="idInstrutorTreino">ID do Instrutor:</label>
+                    <input type="number" id="idInstrutorTreino" name="idInstrutorTreino" required>
+            
+                    <button type="submit">Registrar Treino</button>
+                </form>
+            </div>
+        </section>
+
+
+    </main>
+    
+    <script src="/frontend/js/gerenciamento.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastrar Aluno</title>
+        <link rel="stylesheet" href="/frontend/css/style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <header>
+            <h1>⚒ Gerenciamento da Academia ⚒</h1>
+        </header>
+
+        <main>
+<!-- Navegação principal -->
+            <nav class="form-nav">
+                <button class="nav-button" onclick="exibirFormulario('cadastroAluno')">Cadastrar Aluno</button>
+                <button class="nav-button" onclick="exibirFormulario('consultarAluno')">Consultar Aluno</button>
+<!--                <button class="nav-button" onclick="exibirFormulario('cadastroPlano')">Cadastrar Plano</button> -->
+                <button class="nav-button" onclick="exibirFormulario('consultarPlano')">Consultar Planos</button>
+            </nav>
+<!-- Formulário de Cadastro de Aluno -->
+            <section id="cadastroAluno" class="formulario ativo">
+                <h2>Cadastrar Aluno</h2>
+                <form id="formAluno">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite o nome do aluno" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="idade">Idade:</label>
+                        <input type="number" id="idade" name="idade" placeholder="Digite a idade" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="plano">Plano ID:</label>
+                        <input type="number" id="plano" name="plano" placeholder="Digite o ID do plano" required>
+                    </div>
+                    <button class="submit-button" type="submit">Cadastrar</button>
+                </form>
+            </section>
+<!-- Formulário de Consulta de Aluno -->
+            <section id="consultarAluno" class="formulario">
+                <h2>Consultar Aluno</h2>
+                <form id="formConsultarAluno">
+                    <div class="form-group">
+                        <label for="consultaNomeAluno">Nome do Aluno:</label>
+                        <input type="text" id="consultaNomeAluno" name="consultaNomeAluno" placeholder="Digite o nome do aluno" required>
+                    </div>
+                    <button class="submit-button" type="submit">Consultar</button>
+                </form>
+                <div id="resultadoConsultaAluno" class="resultado"></div>
+            </section>
+
+
+<!-- Formulário de Consulta de Plano -->
+            <section id="consultarPlano" class="formulario">
+                <h2>Consultar Planos Disponíveis na Academia</h2>
+                <form id="formConsultarPlano">
+                    <button class="submit-button" type="button" id="btnConsultarPlano">Consultar Planos</button>
+                    <p>Disponíveis para matrícula do aluno:</p>
+                </form>
+                <div id="resultadoConsultaPlano" class="resultado"></div>
+            </section>
+
+<!-- Formulário de Cadastro de Plano 
+            <section id="cadastroPlano" class="formulario">
+                <h2>Cadastrar Plano</h2>
+                <form id="formPlano">
+                    <div class="form-group">
+                        <label for="nomePlano">Nome do Plano:</label>
+                        <select id="nomePlano" name="nomePlano" required>
+                            <option value="mensal">Plano Mensal</option>
+                            <option value="trimestral">Plano Trimestral</option>
+                            <option value="semestral">Plano Semestral</option>
+                            <option value="anual">Plano Anual</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="valorPlano">Valor do Plano:</label>
+                        <input type="text" id="valorPlano" name="valorPlano" readonly>
+                    </div>
+                    <button class="submit-button" type="submit">Cadastrar</button>
+                </form>
+            </section> -->
+
+        </main>
+        <script src="/frontend/js/script.js"></script>
+
+    </body>
+</html>
