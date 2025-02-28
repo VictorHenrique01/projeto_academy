@@ -101,13 +101,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     async function consultarDisponibilidade() {
-
+        console.log("Função consultarDisponibilidade foi chamada!"); // Verifica se a função está rodando
+    
         try {
-            const response = await fetch(`/instrutores/${periodo}`);
+            let horario = document.getElementById("horario").value.trim();
+            console.log("Horário capturado:", horario); // Verifica se o valor do input está correto
+    
+            if (!horario) {
+                alert("Por favor, insira um horário válido.");
+                return;
+            }
+    
+            const periodo = converterHorarioParaPeriodo(horario);
+            console.log("Período convertido:", periodo); // Verifica se a conversão está correta
+    
+            const response = await fetch(`/instrutores/${encodeURIComponent(periodo)}`);
+            
+            if (!response.ok) {
+                throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+            }
+    
             const data = await response.json();
-
+            console.log("Dados recebidos da API:", data); // Verifica o que está vindo da API
+    
             if (data.instrutores && data.instrutores.length > 0) {
-                alert(`Instrutores disponíveis no período ${periodo}: \n` + data.instrutores.map(i => `- ${i.nome} (Especialidade: ${i.especialidade})`).join("\n"));
+                alert(`Instrutores disponíveis no período ${periodo}: \n` + 
+                      data.instrutores.map(i => `- ${i.nome} (Especialidade: ${i.especialidade})`).join("\n"));
             } else {
                 alert(`Nenhum instrutor disponível no período ${periodo}.`);
             }
@@ -116,6 +135,8 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Erro ao consultar disponibilidade. Tente novamente.");
         }
     }
+    
+    
 
     botaoConsulta.addEventListener("click", consultarDisponibilidade);
     nomeTurmaSelect.addEventListener("change", atualizarInstrutores);

@@ -76,8 +76,13 @@ def excluir_equipamento(equipamento_id: int, db: Session = Depends(get_db)):
 
 @app.get("/instrutores/{periodo}", response_description="Consultar disponibilidade de instrutores")
 def consultar_disponibilidade_instrutor(periodo: str, db: Session = Depends(get_db)):
-   crud.consultar_disponibilidade_instrutor(db, periodo)
-   return {"mensagem": "Consulta de instrutores concluída"}
+    instrutores = db.query(Instrutor).filter(Instrutor.horario_trabalho == periodo).all()
+    
+    if instrutores:
+        return {"instrutores": [{"id": i.id, "nome": i.nome, "especialidade": i.especialidade} for i in instrutores]}
+    
+    return {"instrutores": []}
+
 
 # Endpoints para Planos
 @app.post("/planos/", response_description="Cadastrar um plano")
